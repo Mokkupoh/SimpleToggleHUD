@@ -1,4 +1,4 @@
-local GameSettings = require('GameSettings')
+local GameSettings = require('modules/GameSettings')
 
 registerHotkey('ToggleHUD', 'Toggle HUD', function()
 	GameSettings.ToggleGroup('/interface/hud')
