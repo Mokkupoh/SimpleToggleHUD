@@ -31,7 +31,11 @@ function ToggleHud:new()
         end)
     end)
 
-    registerHotkey('ToggleHUD', 'Toggle HUD', function()
+    registerInput('ToggleHUD', 'Toggle HUD', function(keypress)
+        if not keypress then
+            return
+        end
+
         if not self.hud_hidden then
             self:hideHud()
         else
@@ -41,8 +45,12 @@ function ToggleHud:new()
         self.hud_hidden = not self.hud_hidden
     end)
 
-    registerHotkey('ToggleCrosshair', 'Toggle Crosshair', function()
-            GameSettings.Toggle(self.crosshair_path)
+    registerInput('ToggleCrosshair', 'Toggle Crosshair', function(keypress)
+        if not keypress then
+            return
+        end
+
+        GameSettings.Toggle(self.crosshair_path)
     end)
 
     return self
